@@ -8,6 +8,6 @@
 
 Email.destroy_all
 
-5.times do 
-  Email.create(object: Faker::Name.unique.name, body: Faker::ChuckNorris.fact, read: false)
+10.times do 
+  Email.create(object: Faker::TvShows::Buffy.unique.character, body: Faker::ChuckNorris.fact, read: false)
 end

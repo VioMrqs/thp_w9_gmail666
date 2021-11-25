@@ -1,7 +1,6 @@
-<%= link_to "Recevoir un email", emails_path, :method => :post, remote: 'true', class: "btn" %>
+<%= link_to "Recevoir un email", emails_path, :method => :post, remote: 'true', class: "btn", value: "sound", onclick: "playMusic()"%>
 
 <div class="boxes">
-
   <div class="list_email">
     <h1>Boîte mails</h1>
       <ol id="email-list">
@@ -24,6 +23,15 @@
       <div id="selected_content"></div>
   </div>
 </div>
+
+<script>
+function playMusic(){
+  console.log('<%= asset_path('/audios/evil-intense-synth_C.wav') %>')
+  var music = new Audio('https://www.shockwave-sound.com/sound-effects/halloween-sounds/Evil%20Witch%20Laughing.mp3');
+  music.currentTime = 0;
+  music.play();
+  }
+  </script>
 
 
 
